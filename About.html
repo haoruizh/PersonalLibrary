@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="C:\Users\madei\Desktop\BookShelf\NavigationBar.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<h1 align="center">Personal Library</h1>
+<!--top navigation bar-->
+<div class="topnav">
+  <a href="Bookshelf.html">Home</a>
+  <a href="addNewBookPage.html">AddNewBook</a>
+  <a class = "active" href="About.html">About</a>
+  <a href="Contact.html">Contact</a>
+  <div class="search-container">
+  	<form>
+  		<input id="Input" type="text" placeholder="Search..">
+			<button id="searchButton" onclick="javascript:alert('Search Failed')" type="submit">Enter</button>
+			
+			<!--JS Script to bind "enter" key to button above-->
+			<script>
+				var input=document.getElementById("Input");
+				input.addEventListener("keyup", function(event){
+					if(event.keyCode===13){
+						event.preventDefault();
+						document.getElementById("searchButton").click();
+					}
+				}
+			</script>
+  	</form>
+  </div>
+</div>
+
+<!--About-->
+<h1>About this project:</h1>
+<!--Paragraph-->
+<p></p>
+
+</body>
+</html>

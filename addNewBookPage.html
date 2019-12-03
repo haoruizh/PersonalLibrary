@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="C:\Users\madei\Desktop\BookShelf\NavigationBar.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<h1 align="center">Personal Library</h1>
+<!--top navigation bar-->
+<div class="topnav">
+  <a href="Bookshelf.html">Home</a>
+  <a class="active" href="addNewBookPage.html">AddNewBook</a>
+  <a href="About.html">About</a>
+  <a href="Contact.html">Contact</a>
+  <div class="search-container">
+  	<form>
+  		<input id="Input" type="text" placeholder="Search..">
+			<button id="searchButton" onclick="javascript:alert('Search Failed')" type="submit">Enter</button>
+			
+			<!--JS Script to bind "enter" key to button above-->
+			<script>
+				var input=document.getElementById("Input");
+				input.addEventListener("keyup", function(event){
+					if(event.keyCode===13){
+						event.preventDefault();
+						document.getElementById("searchButton").click();
+					}
+				}
+			</script>
+  	</form>
+  </div>
+</div>
+
+<!--Add a book-->
+<form>
+		<h1>Add a new book:</h1>
+		<p>Title: <input type="text",size="5"/></p>
+		<p>Author: <input type="text",size="5"/></p>
+		<h3>Type:</h3>
+		<p>
+				Fiction:<input type="radio", name = "Type"><br/>
+				Nonfiction:<input type="radio", name="Type"><br/>
+		</p>
+		<!--category of books-->
+		<h3>Category: </h3>
+		<p>
+				History:<input type="checkbox", name="category", value="History"/><br />
+				Fiction:<input type="checkbox", name="category", value="Fiction"/><br />
+				Literature:<input type = "checkbox", name="category", value ="Literature"/><br />
+				Science:<input type = "checkbox", name="category", value ="Science"/><br />
+				Romance:<input type="checkbox", name="category", value="Romance"/><br />
+				Education: <input type="checkbox", name = "category", value="Education"/><br />
+				Technology:<input type="checkbox", name="category", value="Technology"/><br />
+		</p>
+		<h3>Description:</h3>
+		<p>
+				<textarea cols="40" rows="5"></textarea>
+		</p>
+		<h3>Choose the book cover (Image):</h3>
+		<p>
+				<input type="file", name="BookCover", accept="="image/*">
+		</p>
+		<input type = "submit", value= "submit"/>
+		<input type="reset", value = "reset"/>
+</form>
+
+</body>
+</html>
